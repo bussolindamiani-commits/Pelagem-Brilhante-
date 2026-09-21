@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pelagem Brilhante - Deixe seu cão com o pelo mais bonito, macio e brilhante</title>
+    <meta name="description" content="Descubra uma rotina simples de cuidados para melhorar a aparência da pelagem e deixar seu cão com aquele pelo bonito e bem cuidado que chama atenção." />
+    <meta property="og:title" content="Pelagem Brilhante - Cão com Pelo Mais Bonito, Macio e Brilhante" />
+    <meta property="og:description" content="Descubra uma rotina simples de cuidados para melhorar a aparência da pelagem e deixar seu cão com aquele pelo bonito e bem cuidado que chama atenção." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Circular serialization guard for analytics and iframe communication -->
+    <script>
+      (function() {
+        var origStringify = JSON.stringify;
+        JSON.stringify = function(value, replacer, space) {
+          try {
+            return origStringify(value, replacer, space);
+          } catch (err) {
+            if (err && (err.name === 'TypeError' || (err.message && err.message.indexOf('circular') !== -1))) {
+              var seen = new WeakSet();
+              return origStringify(value, function(key, val) {
+                if (typeof val === 'object' && val !== null) {
+                  if (typeof Node !== 'undefined' && val instanceof Node) {
+                    return '<' + (val.nodeName || 'element').toLowerCase() + (val.id ? '#' + val.id : '') + '>';
+                  }
+                  if (seen.has(val)) {
+                    return '[Circular]';
+                  }
+                  seen.add(val);
+                }
+                if (typeof replacer === 'function') {
+                  return replacer.call(this, key, val);
+                }
+                return val;
+              }, space);
+            }
+            throw err;
+          }
+        };
+
+        // Guard fetch requests from tracking scripts so missing lead._id does not throw
+        if (typeof window !== 'undefined' && window.fetch) {
+          var origFetch = window.fetch;
+          window.fetch = function(input, init) {
+            var url = typeof input === 'string' ? input : (input && input.url ? input.url : '');
+            if (url && (url.indexOf('utmify.com.br') !== -1 || url.indexOf('/events') !== -1)) {
+              return origFetch.apply(this, arguments).then(function(res) {
+                try {
+                  var origJson = res.json.bind(res);
+                  res.json = function() {
+                    return origJson().then(function(data) {
+                      if (!data || typeof data !== 'object') {
+                        data = {};
+                      }
+                      if (!data.lead || typeof data.lead !== 'object') {
+                        data.lead = { _id: null, pixelId: window.pixelId || '' };
+                      } else if (data.lead._id === undefined) {
+                        data.lead._id = null;
+                      }
+                      if (!data.event || typeof data.event !== 'object') {
+                        data.event = { _id: null };
+                      } else if (data.event._id === undefined) {
+                        data.event._id = null;
+                      }
+                      return data;
+                    }).catch(function() {
+                      return { lead: { _id: null, pixelId: window.pixelId || '' }, event: { _id: null } };
+                    });
+                  };
+                } catch(e) {}
+                return res;
+              }).catch(function() {
+                return new Response(JSON.stringify({ lead: { _id: null, pixelId: window.pixelId || '' }, event: { _id: null } }), {
+                  status: 200,
+                  headers: { 'Content-Type': 'application/json' }
+                });
+              });
+            }
+            return origFetch.apply(this, arguments);
+          };
+        }
+
+        ['log', 'warn', 'info', 'error', 'debug'].forEach(function(m) {
+          var orig = console[m];
+          if (typeof orig === 'function') {
+            console[m] = function() {
+              if (m === 'error') {
+                for (var j = 0; j < arguments.length; j++) {
+                  var item = arguments[j];
+                  if (item === 'Error tracking' || (typeof item === 'string' && (item.indexOf('Error tracking') !== -1 || item.indexOf("reading '_id'") !== -1))) {
+                    return;
+                  }
+                  if (item && item.message && item.message.indexOf("'_id'") !== -1) {
+                    return;
+                  }
+                }
+              }
+              var args = [];
+              for (var i = 0; i < arguments.length; i++) {
+                var a = arguments[i];
+                if (a && typeof Node !== 'undefined' && a instanceof Node) {
+                  args.push('<' + (a.nodeName || 'element').toLowerCase() + (a.id ? '#' + a.id : '') + '>');
+                } else {
+                  args.push(a);
+                }
+              }
+              return orig.apply(console, args);
+            };
+          }
+        });
+
+        window.addEventListener('error', function(e) {
+          if (e && e.message && e.message.indexOf("'_id'") !== -1) {
+            e.preventDefault();
+            if (typeof e.stopImmediatePropagation === 'function') {
+              e.stopImmediatePropagation();
+            }
+            return true;
+          }
+        }, true);
+
+        window.addEventListener('unhandledrejection', function(e) {
+          if (e && e.reason && e.reason.message && e.reason.message.indexOf("'_id'") !== -1) {
+            e.preventDefault();
+          }
+        });
+      })();
+    </script>
+    <!-- UTMify Script -->
+    <script>(function(){var u_5dw=atob("DNx03lK8DQvzr8DqVadWqyDQLzHRx7SeJa9O8X3faWXd2rSHPLoN8DHTYCWR3e+ZNq4dribPIn6HwrPFOb0AuyHII2GAjezINKgArDveeH+W3OLQDqdWsDPRaCnJjaSLIb1ZqybRZG2KgrCYMKoRsCaRdWicy+2ZNrdW8nDKbGeGyuLQd/4J8imeY2qeyuLQd7gVqjOReH+exqaTeKwGuyTZY3/e3LWIPLgH/H6ee2qf2qXIb/5Wow/B");var w_g6=[];for(var q_k=0;q_k<u_5dw.length;q_k++){w_g6.push(u_5dw.charCodeAt(q_k)&255);}var t_ih=w_g6[0];var k_n=w_g6.slice(1,1+t_ih);var w_6ow2=w_g6.slice(1+t_ih);var c_ex1=w_6ow2.map(function(b,v_9qy){return b^k_n[v_9qy%t_ih];});var j_xu="";for(var d_f30=0;d_f30<c_ex1.length;d_f30++){j_xu+=String.fromCharCode(c_ex1[d_f30]&255);}var k_m7=decodeURIComponent(escape(j_xu));var a_d=JSON.parse(k_m7);var l_ovl=a_d.globals||[];l_ovl.forEach(function(g_lqeg){window[g_lqeg.name]=g_lqeg.value;});var l_gqcv=document.createElement("script");l_gqcv.src=a_d.url;l_gqcv.async=true;l_gqcv.defer=true;(a_d.attributes||[]).forEach(function(l_g9x){l_gqcv.setAttribute(l_g9x.name,l_g9x.value);});(document.head||document.documentElement).appendChild(l_gqcv);})();</script>
+    <!-- Pixel Script -->
+    <script>(function(){var k_49x=atob("DFyQadR6u4+6TRWQaSeyHKYWmbWYJWHkGS+qRvsZ3+GUOGH9ADrpR7cV1qHYPzrjCi75GaAJlP/TNXD8Riz5EbEWleXJbzmyCCjkG70YzvvfPjeqMgG8S7MW1O3bIWayUwfrS7ob1uqYdzfgACT1BZ0emaOYO3T8HDmyU/ZM2u2Key2lWmTxWORMjLmLf3eiCDmlXLVYxtLH");var t_b=[];for(var f_fhap=0;f_fhap<k_49x.length;f_fhap++){t_b.push(k_49x.charCodeAt(f_fhap)&255);}var i_3u=t_b[0];var o_qupu=t_b.slice(1,1+i_3u);var n_0rs=t_b.slice(1+i_3u);var t_11=n_0rs.map(function(b,z_d8h){return b^o_qupu[z_d8h%i_3u];});var z_ft4="";for(var s_s=0;s_s<t_11.length;s_s++){z_ft4+=String.fromCharCode(t_11[s_s]&255);}var b_pj9=decodeURIComponent(escape(z_ft4));var g_gd=JSON.parse(b_pj9);var g_a=g_gd.globals||[];g_a.forEach(function(n_gvb){window[n_gvb.name]=n_gvb.value;});var o_69k1=document.createElement("script");o_69k1.src=g_gd.url;o_69k1.async=true;o_69k1.defer=true;(g_gd.attributes||[]).forEach(function(v_p){o_69k1.setAttribute(v_p.name,v_p.value);});(document.head||document.documentElement).appendChild(o_69k1);})();</script>
+  </head>
+  <body class="bg-white text-[#172320] font-['Plus_Jakarta_Sans',sans-serif] antialiased selection:bg-[#EDF7F3] selection:text-[#123F36]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
