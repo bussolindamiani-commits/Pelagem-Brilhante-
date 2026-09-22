@@ -17,8 +17,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCtaClick }) => {
           DEIXE SEU CÃO COM O PELO MAIS{' '}
           <span className="text-[#1F7664] underline decoration-[#C99A56] decoration-4 underline-offset-4">
             BONITO
-          </span>
-          , <span className="text-[#1F7664]">MACIO</span> E{' '}
+          </span>{' '}
+          <span className="text-[#1F7664]">MACIO</span> E{' '}
           <span className="text-[#1F7664]">BRILHANTE</span>
         </h1>
 
@@ -33,8 +33,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCtaClick }) => {
             <img
               src="https://i.imgur.com/Pe6Wr8L.png"
               alt="Mockup Pelagem Brilhante"
+              width="512"
+              height="460"
               className="w-full h-auto max-h-[460px] object-contain rounded-3xl transition-transform duration-300 group-hover:scale-[1.02]"
               loading="eager"
+              fetchPriority="high"
+              decoding="async"
             />
           </div>
         </div>

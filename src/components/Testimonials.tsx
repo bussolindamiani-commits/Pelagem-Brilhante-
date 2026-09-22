@@ -91,8 +91,11 @@ export const Testimonials: React.FC = () => {
                 <img
                   src={t.avatarUrl}
                   alt={t.name}
+                  width="44"
+                  height="44"
                   className="w-11 h-11 rounded-full object-cover border border-[#1F7664]/20 shadow-2xs shrink-0"
                   loading="lazy"
+                  decoding="async"
                   referrerPolicy="no-referrer"
                 />
                 <div className="min-w-0">

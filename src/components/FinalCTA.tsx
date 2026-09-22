@@ -7,10 +7,11 @@ export const FinalCTA: React.FC = () => {
       {/* Background dog photograph with soft dark gradient overlay for emotional impact */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1600&q=80"
+          src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1200&q=75"
           alt="Cão feliz com pelagem limpa, brilhante e sedosa"
           className="w-full h-full object-cover object-center opacity-20 filter grayscale-30"
           loading="lazy"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#123F36] via-[#123F36]/85 to-[#123F36]/90" />
       </div>

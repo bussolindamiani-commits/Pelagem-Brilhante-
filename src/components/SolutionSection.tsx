@@ -50,8 +50,11 @@ export const SolutionSection: React.FC = () => {
               <img
                 src="https://i.imgur.com/MFHfzXz.png"
                 alt="Apresentação do Produto Pelagem Brilhante"
+                width="600"
+                height="480"
                 className="w-full h-auto max-h-[480px] object-contain drop-shadow-xl"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -105,8 +108,11 @@ export const SolutionSection: React.FC = () => {
             <img
               src="https://i.imgur.com/wQEKZWs.png"
               alt="Antes e Depois da Pelagem"
+              width="672"
+              height="380"
               className="w-full h-auto object-cover"
               loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

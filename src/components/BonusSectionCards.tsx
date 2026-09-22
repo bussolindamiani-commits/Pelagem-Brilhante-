@@ -70,8 +70,11 @@ export const BonusSectionCards: React.FC = () => {
                   <img
                     src={bonus.image}
                     alt={bonus.alt}
+                    width="260"
+                    height="240"
                     className="h-52 sm:h-60 w-auto max-w-full object-contain drop-shadow-xl hover:scale-105 transition-transform duration-300"
                     loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </div>
